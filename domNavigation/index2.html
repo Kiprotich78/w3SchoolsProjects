@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    const demo = document.querySelector('#demo');
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
+};
+xhttp.open("GET", "/domNavigation/file.xml", true);
+xhttp.send();
+
+function myFunction(xml) {
+    var x, i, attnode, xmlDoc, txt;
+    xmlDoc = xml.responseXML;
+    x = xmlDoc.getElementsByTagName('book');
+    for (i = 0; i < x.length; i++) { 
+        const h2 = document.createElement("h2");
+        h2.textContent = x[i].getAttribute('category');
+        demo.append(h2);
+        for(let k=0; k< x[i].childNodes.length; k++){
+            if( k % 2 != 0){
+
+                const p = document.createElement('p');
+                const span1 = document.createElement('span');
+                const span2 = document.createElement('span');
+                span1.textContent = x[i].childNodes[k].nodeName + ": ";
+                span2.textContent = x[i].childNodes[k].childNodes[0].nodeValue;
+                p.append(span1, span2);
+                span1.style.fontWeight = '800';
+                demo.appendChild(p);
+            }
+        }
+    }
+}
+</script>
+
+</body>
+</html>

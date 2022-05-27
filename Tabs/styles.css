@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    width: 100vw;
+}
+nav ul{
+    width: 80%;
+    height: 50px;
+    background-color: rgb(227, 227, 227);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+nav li{
+    list-style: none;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    padding: 2rem;
+    text-transform: capitalize;
+}
+
+article{
+    display: none;
+}
+
+article > *{
+    padding: .5rem;
+}
+.show{
+    transition: display ease .3s;
+    display: block;
+    background-color: rgb(154, 154, 154);
+    width: 80%;
+}
+.changeColor{
+    background-color: rgb(154, 154, 154);
+}
