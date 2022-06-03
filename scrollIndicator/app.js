@@ -1,9 +1,16 @@
-const windowLenght = document.querySelector('p');
-const input = document.querySelector('input');
-const lenght = windowLenght.getBoundingClientRect().height;
-input.max = lenght - 476;
-console.log(lenght);
-window.addEventListener('scroll', () => {
-    input.value = parseInt(window.scrollY);
-    console.log(input.value);
-})
+const windowLenght = document.querySelector("p");
+const input = document.querySelector("input");
+
+windowLenght.addEventListener("scroll", () => {
+    input.max = windowLenght.scrollHeight - windowLenght.clientHeight;
+    var height = windowLenght.scrollTop;
+    console.log(height);
+    input.addEventListener('change', () => {
+        height = input.value;
+        windowLenght.scrollTo(0, height);
+
+    })
+    console.log(height);
+    input.value = parseInt(height);
+
+});
