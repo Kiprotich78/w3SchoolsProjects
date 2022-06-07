@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital@1&family=Send+Flowers&family=Teko:wght@300&display=swap');
+
+*, *::after, *::before{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wholeChatPage{
+    position: relative;
+    overflow: hidden;
+    height: 90%;
+    width: 330px;
+    background-color: aqua;
+    border-radius: 1rem;
+}
+h2{
+    text-align: center;
+    padding: .3rem;
+    text-transform: capitalize;
+    background: rgb(16, 134, 177);
+}
+.chatScreen{
+    height: 84.6%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: .2rem;
+}
+.chat{
+    width: calc(100% - .2rem);
+    margin: 3px;
+    height: max-content;
+    display: flex;
+}
+.span{
+    display: inline-block;
+    background-color: white;
+    padding: .3rem;
+    max-width: 250px;
+    word-wrap: break-word;
+    border-radius: .5rem;
+}
+.sent{
+    justify-content: flex-end;
+}
+.recieved{
+    justify-content: flex-start;
+}
+.inputMessage{
+    position: absolute;
+    bottom: 0;
+    padding: .3rem;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(16, 134, 177);
+    display: flex;
+}
+
+textarea{
+    width: 75%;
+    min-height: 90%;
+    border-radius: .5rem;
+    padding: 0 .5rem;
+    line-height: 20px;
+    font-size: 1.2rem;
+    outline: none;
+    resize: none;
+    border: none;
+    margin-left: 10px; 
+    display: flex;
+    align-items: center;
+    font-family: 'Gentium Plus', serif;
+}
+textarea::-webkit-scrollbar{
+    width: 0;
+}
+button{
+    position: absolute;
+    right: .3rem;
+    bottom: .3rem;
+    cursor: pointer;
+    height: 40px;
+    width: 20%;
+    border-radius: .5rem;
+    background-color: rgb(206, 216, 219);
+    text-transform: uppercase;
+    pointer-events: none;
+}
+button:hover,
+button:focus{
+    background-color: rgb(150, 157, 159);
+
+}
