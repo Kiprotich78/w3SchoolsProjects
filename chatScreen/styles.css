@@ -51,7 +51,7 @@ h2{
 .sent{
     justify-content: flex-end;
 }
-.recieved{
+.received{
     justify-content: flex-start;
 }
 .inputMessage{
