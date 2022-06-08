@@ -6,7 +6,7 @@ const inputMessage = document.querySelector('.inputMessage');
 const chatArray = [
     {
         message: 'Hello',
-        answer: 'Helloo 2'
+        answer: 'Helloo 2'   
     },
     {
         message: 'Hi',
@@ -57,8 +57,11 @@ sendButton.addEventListener('click', () => {
 
     setTimeout(() => {
         p2.textContent = 'typing...';
+
         d2.append(p2);
         chatScreen.append(d2);
+        chatScreen.scrollTo(0, chatScreen.scrollHeight);
+
     }, 500);
     
 
@@ -68,6 +71,7 @@ sendButton.addEventListener('click', () => {
            
             setTimeout(() => {
                 p2.textContent = element.answer;
+                chatScreen.scrollTo(0, chatScreen.scrollHeight);
              }, 2000);
         };
      
@@ -76,10 +80,11 @@ sendButton.addEventListener('click', () => {
     setInterval(() => {
         if (p2.textContent == 'typing...') {
             p2.textContent = 'Sorry,,I do not understand';
+            chatScreen.scrollTo(0, chatScreen.scrollHeight);
         }
     }, 3000);
             
-
+    chatScreen.scrollTo(0, chatScreen.scrollHeight);
     chatInput.value = "";
     sendButton.style.pointerEvents = 'none';
     inputMessage.style.height = `50px`;
