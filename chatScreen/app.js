@@ -55,22 +55,30 @@ sendButton.addEventListener('click', () => {
     d2.classList.add('chat', 'received');
     p2.classList.add('span');
 
+    setTimeout(() => {
+        p2.textContent = 'typing...';
+        d2.append(p2);
+        chatScreen.append(d2);
+    }, 500);
+    
+
     chatArray.forEach((element) => {
         if (chatInput.value.toUpperCase() == element.message.toUpperCase())
         {
-
-            setTimeout(() => {
-                p2.textContent = 'typing...';
-                d2.append(p2);
-                chatScreen.append(d2);
-            }, 500);
-            
+           
             setTimeout(() => {
                 p2.textContent = element.answer;
              }, 2000);
         };
      
     });
+
+    setInterval(() => {
+        if (p2.textContent == 'typing...') {
+            p2.textContent = 'Sorry,,I do not understand';
+        }
+    }, 3000);
+            
 
     chatInput.value = "";
     sendButton.style.pointerEvents = 'none';
