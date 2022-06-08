@@ -21,7 +21,7 @@ const chatArray = [
         answer: 'naendelea pao sana, labda wewe?'
     },
     {
-        message: 'Naendelea pao pia',
+        message: 'Naendelea poa pia',
         answer: 'hio ni fiti'
     }
 ];
@@ -49,22 +49,28 @@ sendButton.addEventListener('click', () => {
     p.textContent = chatInput.value;
     d.append(p);
     chatScreen.append(d);
-
+    
     const d2 = document.createElement('div');
     const p2 = document.createElement('p');
     d2.classList.add('chat', 'received');
     p2.classList.add('span');
 
     chatArray.forEach((element) => {
-        if (chatInput.value.toUpperCase() == element.message.toUpperCase()) {
-            p2.textContent = element.answer;
+        if (chatInput.value.toUpperCase() == element.message.toUpperCase())
+        {
+
+            setTimeout(() => {
+                p2.textContent = 'typing...';
+                d2.append(p2);
+                chatScreen.append(d2);
+            }, 500);
+            
+            setTimeout(() => {
+                p2.textContent = element.answer;
+             }, 2000);
         };
      
     });
-    d2.append(p2);
-    chatScreen.append(d2);
-
-
 
     chatInput.value = "";
     sendButton.style.pointerEvents = 'none';
