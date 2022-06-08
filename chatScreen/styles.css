@@ -18,21 +18,24 @@ body{
     overflow: hidden;
     height: 90%;
     width: 330px;
-    background-color: aqua;
+    background-color: #1086B1;
     border-radius: 1rem;
 }
 h2{
     text-align: center;
     padding: .3rem;
     text-transform: capitalize;
-    background: rgb(16, 134, 177);
+    background: #A25A9C;
 }
 .chatScreen{
-    height: 84.6%;
+    height: 82.6%;
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     padding: .2rem;
+}
+.chatScreen::-webkit-scrollbar{
+    width: 0px;
 }
 .chat{
     width: calc(100% - .2rem);
@@ -42,14 +45,17 @@ h2{
 }
 .span{
     display: inline-block;
-    background-color: white;
+    background-color: #CAF7FF;
     padding: .3rem;
     max-width: 250px;
     word-wrap: break-word;
-    border-radius: .5rem;
+    border-radius: .5rem .5rem .5rem 0;
 }
 .sent{
     justify-content: flex-end;
+}
+.sent .span{
+    border-radius: .5rem .5rem 0 .5rem;
 }
 .received{
     justify-content: flex-start;
@@ -60,7 +66,7 @@ h2{
     padding: .3rem;
     height: 50px;
     width: 100%;
-    background-color: rgb(16, 134, 177);
+    background-color: #A25A9C;
     display: flex;
 }
 
@@ -90,12 +96,12 @@ button{
     height: 40px;
     width: 20%;
     border-radius: .5rem;
-    background-color: rgb(206, 216, 219);
+    background-color: #60BBE9;
     text-transform: uppercase;
     pointer-events: none;
 }
 button:hover,
 button:focus{
-    background-color: rgb(150, 157, 159);
+    background-color: #8cc8e7;
 
 }
