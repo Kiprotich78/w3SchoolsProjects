@@ -61,6 +61,11 @@ ul a{
   display: flex;
   position: relative;
 }
+
+.signup form > *{
+  margin: 15px 0;
+}
+
 form > *{
     margin: 20px 0;
 }
@@ -72,6 +77,11 @@ form > *{
   text-align: center;
   transform: scale(0);
 }
+.file input{
+  font-size: 1rem;
+  padding: 0;
+}
+
 .top-row{
   display: flex;
   width: 100%;
@@ -86,6 +96,18 @@ form > *{
   border: 1px solid white;
   height: 35px;
 }
+.signup .field-wrap{
+  height: 30px;
+  
+}
+.signup .field-wrap label{
+  font-size: 1rem;
+}
+
+.file{
+  border: none;
+}
+
 input{
   outline: none;
   border: none;
@@ -98,7 +120,7 @@ input{
   background-color: none;
   color: white;
   padding: .2rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 h1{
   color: white;
@@ -118,6 +140,10 @@ label{
 .labelActive{
   font-size: 1rem;
   transform: translate(-2px, 30px);
+}
+.signup .labelActive{
+  font-size: .3rem;
+  transform: translate(-2px, 24px);
 }
 button{
   border: none;
@@ -155,12 +181,13 @@ button{
   transform: scale(1);
 }
 
-
-
 @media (max-width: 430px){
   .form{
     width: 100%;
     height: 100vh;
+  }
+  input{
+    font-size: 1rem;
   }
   h1{
     margin: 10px 0;

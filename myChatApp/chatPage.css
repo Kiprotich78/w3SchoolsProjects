@@ -29,6 +29,11 @@ body{
     width: 350px;
     background-color: var(--form-bg);
 }
+@media (max-width: 350px){
+    .whole-page{
+        width: 100%;
+    }
+}
 .header{
     position: relative;
     width: 100%;
@@ -67,6 +72,11 @@ body{
     overflow: hidden;
     transform: translateX(80px);
 }
+@media(max-width: 350px){
+    .image{
+        transform: translateX(150%);
+    }
+}
 img{
     width: 150%;
 }
@@ -98,6 +108,7 @@ img{
     border-radius: .5rem .5rem .5rem 0;
 }
 .sentChat .chat-container{
+    background-color: #399c82;
     border-radius: .5rem .5rem 0 .5rem;
 }
 .chat-header{
@@ -149,6 +160,7 @@ span{
 span:hover{
     background-color: gray;
 }
+
 .message{
     word-wrap: break-word;
 }

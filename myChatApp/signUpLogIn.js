@@ -1,8 +1,8 @@
 const toggleTab = document.querySelectorAll('.tab'),
-    signUp = document.querySelector('.signup'),
-    login = document.querySelector('.login'),
-    input = document.querySelectorAll('input'),
-    label  = document.querySelectorAll('label');
+        signUp = document.querySelector('.signup'),
+        login = document.querySelector('.login'),
+        input = document.querySelectorAll('input'),
+        label  = document.querySelectorAll('label');
 
 toggleTab.forEach(tab => { 
     tab.addEventListener('click', () => {
@@ -27,6 +27,7 @@ toggleTab.forEach(tab => {
 input.forEach((input, index) => {
     input.addEventListener('keyup', () => {
         if (input.value.length > 0) {
+            console.log(index);
             label[index].classList.add('labelActive');
         }
         else {

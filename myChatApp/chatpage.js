@@ -20,6 +20,9 @@ clicked.addEventListener('click', () => {
     rendermessage();
 })
 
+
+
+
 function rendermessage() {
     const timeHour = new Date().getHours();
     const timeMinute = new Date().getMinutes();
