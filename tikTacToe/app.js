@@ -1,4 +1,5 @@
 const grid = document.querySelectorAll('.grid');
+const playerscore = document.querySelectorAll('.playerscore p span');
 const wins = [
     [0, 1, 2],
     [3, 4, 5],
@@ -12,8 +13,8 @@ const wins = [
 
 let player1 = [];
 let player2 = [];
-
-
+playerscore[0].textContent = localStorage.getItem('player1_score') ? localStorage.getItem('player1_score') : 0;
+playerscore[1].textContent = localStorage.getItem('player2_score') ? localStorage.getItem('player2_score') : 0;
 grid.forEach((element, index) => {
     element.addEventListener('click', function (e) {
         if (!element.classList.contains('played')) {
@@ -21,11 +22,15 @@ grid.forEach((element, index) => {
         }
         if (element.classList.contains('cross')) {
             player2.push(index);
-            checkWin(player2, 'Player 2');
+            let score = checkWin(player2, 'Player 2', parseInt(playerscore[1].textContent));
+            playerscore[1].textContent = score;
+            localStorage.setItem('player2_score', score);
         }
         else {
             player1.push(index);
-            checkWin(player1, 'Player 1');
+            let score = checkWin(player1, "player1", parseInt(playerscore[0].textContent));
+            playerscore[0].textContent = score;
+            localStorage.setItem('player1_score', score);
         }
         grid.forEach(element => {
             if (!element.classList.contains('played')) {
@@ -35,8 +40,11 @@ grid.forEach((element, index) => {
 
     });
 });
-
-function checkWin(player, name) {
+let count = 0;
+function checkWin(player, name, score) {
+    count++;
+    btn = document.createElement('button');
+    btn.textContent = 'Play Again';
     const winner = document.querySelector('section');
     for (let i = 0; i < wins.length; i++) {
         let win = wins[i];
@@ -49,6 +57,24 @@ function checkWin(player, name) {
         if (winCount === 3) {
             winner.textContent = `${name} wins!`;
             winner.classList.add('winner');
+            winner.appendChild(btn);
+            refresh();
+            score++;
         }
     }
+    if (count === 9) {
+        winner.textContent = 'Draw!';
+        winner.classList.add('winner');
+        winner.appendChild(btn);
+        refresh();
+    }
+
+    return score;
 };
+
+function refresh() {
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', function () {
+        location.reload();
+    });
+}

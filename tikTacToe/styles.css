@@ -114,8 +114,20 @@ body{
 
 .winner{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     font-weight: 800;
+}
+button{
+    background-color: black;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    cursor: pointer;
 }
