@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #f2f2f2;
+    background-color: #7ed6df;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -20,6 +20,7 @@ body{
     width: 300px;
     height: 300px;
     margin-top: 50px;
+    background-color: #22a6b3;
 }
 .Board > *{
     border: 1.5px solid black;
@@ -56,7 +57,7 @@ body{
     position: absolute;
     width: 70%;
     height: 70%;
-    border: 5px solid rgb(199, 199, 199);
+    border: 5px solid #7ed6df;
     border-radius: 50%;
     transform: scale(0);
     transition: all .2s;
@@ -69,7 +70,7 @@ body{
     height: 7px;
     border: none;
     border-radius: 0;
-    background-color: rgb(199, 199, 199);
+    background-color: #7ed6df;
     transform: rotate(0) scale(0);
     transition: transform .2s;
 }
@@ -86,10 +87,10 @@ body{
 .Board div.played div{
     cursor: not-allowed;
     transform: scale(1);
-    border:5px solid grey;
+    border:5px solid #535c68;
 }
 .Board div.played.cross > *{
-    background-color: grey;
+    background-color: #130f40;
     border: none;
 }
 .Board div.played.cross > :nth-child(1){

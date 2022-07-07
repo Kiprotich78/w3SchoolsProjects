@@ -71,7 +71,6 @@ function checkWin(player, name, score) {
 
     return score;
 };
-
 function refresh() {
     const btn = document.querySelector('button');
     btn.addEventListener('click', function () {
